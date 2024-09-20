@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+    <div class="container ">
+      
+        <div class="track width-control">
+            <div class="head-form">
+            <div class="plantpay">
+                <label>ម៉ោង</label>
+                <br>
+                <span id="time"></span>
+            </div>
+            <div class="plantpay">
+                <label for="expence">ការបរិច្ឆេទ</label>
+                <br>
+                <span id="day"></span>
+                <span id="today"></span>
+                <span id="month"></span>
+                <span id="year"></span>
+            </div>
+        </div>
+
+        <h1>តារាងទូទាត់</h1>
+        <p>Sa App</p>
+        <div class="head3">
+            <button class="btnmake" id="removeall">បង្កើតប្រាក់ថ្មី</button>
+            <button class="btnmake" id="intro">ការណែនាំ</button>
+        </div>
+        <div class="head">
+            <h4 id="balance">តុល្យភាព:</h4>
+            <button class="btn" id="addmoney">បន្ថែម</button>
+        </div>
+        <div id="head1">
+            <label for="amount">ចំនួនបញ្ចូល:</label>
+            <input type="number" id="amount" placeholder="បញ្ចូលទឹកប្រាក់">
+            <button class="btn" id="addButton">រក្សាទុក</button>
+
+        </div>
+        <div class="track-body">
+            <h3>ការទូទាត់</h3>
+
+        </div>
+        <div class="item">
+            <button class="btn1" id="addform">បង្កើតការទិញ</button>
+        </div>
+        <div id="box">
+            <div class="item">
+                <label for="amount">ឈ្មោះទំនិញ:</label>
+                <input type="text" id="nameitems" placeholder="បញ្ចូលឈ្មោះទំនិញ">
+            </div>
+            <div class="item">
+                <label for="amount">ថ្ងៃខែទូទាត់:</label>
+                <input type="date" id="datebuy" placeholder="ថ្ងៃខែទូទាត់">
+            </div>
+            <div class="item">
+                <label for="tye">ការចំណាយ:</label>
+                <input type="number" id="paid" placeholder="បញ្ចូលការទឹកប្រាក់">
+            </div>
+            <div class="item">
+                <label for="remark">ចំណាំ:</label>
+                <input type="text" id="remark" placeholder="បញ្ចូលការចំណាំ">
+            </div>
+            <div class="item">
+                <button class="btn1" id="additems">ចំណាយ</button>
+            </div>
+
+        </div>
+
+        <div class="head-form ">
+            <div class="plantpay">
+                <label>ថវិកាចំណាយ</label>
+                <h4 id="expense"></h4>
+            </div>
+            <div class="plantpay">
+                <label for="expence">ថវិកាសរុប</label>
+                <h4 id="budget"></h4>
+            </div>
+        </div>
+        <div class="history">
+            <h3>ប្រវត្តការទូទាត់</h3>
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="ស្វែងរក...">
+                <button class="btn" id="searchButton">ស្វែងរក</button>
+            </div>
+            <ul id="listbuy">
+                <!-- <li>
+                        <span>book</span>
+                        <span>10/10/2021</span>
+                        <span>+100$</span>
+                        <span>Income</span>
+                        <button class="btn">Delete</button>
+                    </li> -->
+
+            </ul>
+            <footer>
+                <p>© <span id="years"></span> Tracker. All rights reserved by sa.</p>
+            </footer>
+        </div>
+    </div>
+   
+    </div>
+
+</body>
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("years").textContent = new Date().getFullYear();
+    document.getElementById("today").textContent = new Date().getDate();
+    document.getElementById("month").textContent = new Date().toLocaleString("km-KH", { month: "long" });
+    document.getElementById("day").textContent = new Date().toLocaleString("km-KH", { weekday: "long" });
+    document.getElementById("time").textContent = new Date().toLocaleTimeString();
+</script>
+<script src="script.js"></script>
+
+</html>

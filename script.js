@@ -81,7 +81,7 @@ function buyitem() {
         return;
     }
 
-    if (balance > paid) {
+    if (balance => paid) {
         const taskdata = { name, paid, datebuy, remark };
         listbuys.push(taskdata);
 

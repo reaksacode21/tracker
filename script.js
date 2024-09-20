@@ -70,7 +70,7 @@ function localSave() {
 document.getElementById("addButton").onclick = addBalance;
 
 function buyitem() {
-    
+
     const name = inputname.value;
     const paid = parseFloat(inputpaid.value);
     const datebuy = inputdatebuy.value;
@@ -81,23 +81,27 @@ function buyitem() {
         return;
     }
 
-    const taskdata = { name, paid, datebuy, remark };
-    listbuys.push(taskdata);
+    if (balance > paid) {
+        const taskdata = { name, paid, datebuy, remark };
+        listbuys.push(taskdata);
 
-    addItemBuy(name, datebuy, paid, remark);
+        addItemBuy(name, datebuy, paid, remark);
 
-    balance -= paid; // Update balance
-    expense += paid; // Update expense
-    updateDisplay(); // Update display
+        balance -= paid; // Update balance
+        expense += paid; // Update expense
+        updateDisplay(); // Update display
 
-    localSave(); // Save changes in local storage
-    
-    box.style.display = 'none';
-    // Clear input fields
-    inputname.value = '';
-    inputpaid.value = '';
-    inputdatebuy.value = '';
-    inputremark.value = '';
+        localSave(); // Save changes in local storage
+
+        box.style.display = 'none';
+        // Clear input fields
+        inputname.value = '';
+        inputpaid.value = '';
+        inputdatebuy.value = '';
+        inputremark.value = '';
+    }else{
+        Swal.fire("ទឹកប្រាក់របស់អ្នកចំណាយលើសហើយ");
+    }
 }
 
 document.getElementById("additems").onclick = buyitem;
@@ -292,7 +296,7 @@ function displayhead1() {
 document.getElementById("addmoney").addEventListener("click", displayhead1);
 const box = document.getElementById('box'); // Correctly use document.getElementById
 function displayhead2() {
-    
+
     if (box.style.display === 'none' || box.style.display === '') {
         box.style.display = 'flex'; // Set display to flex
     } else {
@@ -300,10 +304,10 @@ function displayhead2() {
     }
 }
 document.getElementById("addform").addEventListener("click", displayhead2);
-function intro(){
+function intro() {
     Swal.fire({
         title: 'SA APPសូមស្វាគមន៍',
-        text:'មុខងារគឺការកត់ត្រាការចំណាយប្រចាំខែនិងសប្តាហ៍',
+        text: 'មុខងារគឺការកត់ត្រាការចំណាយប្រចាំខែនិងសប្តាហ៍',
         cancelButtonText: 'បោះបង់'
     })
 }

@@ -46,7 +46,7 @@ function addBalance() {
         }).then((result) => {
             if (result.isConfirmed) {
                 balance += amountValue; // Update balance
-                budget = balance;
+                budget = balance+expense;
                 updateDisplay(); // Update display for balance and budget
                 localSave();
                 amount.value = ''; // Clear the input field

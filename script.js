@@ -81,7 +81,10 @@ function buyitem() {
         return;
     }
 
-    if (balance >= paid) {
+    if ((balance+0.1) < paid) {
+        // alert((balance+0.1) + ":"+paid);
+        Swal.fire("ទឹកប្រាក់របស់អ្នកចំណាយលើសហើយ");
+    }else{
         const taskdata = { name, paid, datebuy, remark };
         listbuys.push(taskdata);
 
@@ -99,8 +102,7 @@ function buyitem() {
         inputpaid.value = '';
         inputdatebuy.value = '';
         inputremark.value = '';
-    }else{
-        Swal.fire("ទឹកប្រាក់របស់អ្នកចំណាយលើសហើយ");
+        
     }
 }
 
